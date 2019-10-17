@@ -4,8 +4,10 @@ import UIKit
 
 // Write a function named double(_:) that takes in a Double and returns that number times two
 
-// Your function here
-
+func double(number dub: Double) -> Double {
+    let result = dub * 2.0
+    return result
+}
 
 let testCasesOne: [(Double, Double)] = [
     (input: 3.0, expectedOutput: 6.0),
@@ -14,10 +16,10 @@ let testCasesOne: [(Double, Double)] = [
     (input: 99, expectedOutput: 198)
 ]
 
-//for (input, expectedOutput) in testCasesOne {
-//    let output = double(input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesOne {
+    let output = double(number: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 
 
@@ -25,7 +27,15 @@ let testCasesOne: [(Double, Double)] = [
 
 // Write a function named smallest(of:and:) that takes in two Doubles and returns the smaller number
 
-// Your function here
+func smallest(of x: Double, and y: Double) -> Double {
+    var result = Double(0)
+    if x > y {
+        result = y
+    } else {
+        result = x
+    }
+    return result
+}
 
 let testCasesTwo: [(Double, Double, Double)] = [
     (inputOne: 8.0, inputTwo: 3.0, expectedOutput: 3.0),
@@ -81,7 +91,15 @@ let testCasesFour: [(Character, String, Int)] = [
 
 // Write a function called removeNils(from:) that takes an array of optional Ints and returns an array with them unwrapped with any nil values removed.
 
-// Your function here
+func removeNils(from arr: [Int?]) -> [Int] {
+   var noNils : [Int] = []
+   for num in arr {
+       if let realNumber = num{
+           noNils.append(realNumber)
+       }
+   }
+   return noNils
+}
 
 let testCasesFive: [([Int?], [Int])] = [
     (input: [1, nil, 9, nil, 10, nil], expectedOutput: [1,9,10]),
