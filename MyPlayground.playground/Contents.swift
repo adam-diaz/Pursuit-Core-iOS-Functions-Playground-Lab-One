@@ -73,7 +73,7 @@ let testCasesThree: [([Double], Double)] = [
 // Write a function named occurrances(of:in:) that counts how many characters in a String match a specific character.
 let numOfCharacters: Character = "l"
 
-func occurrances(_ char: Character, _: String) -> Int {
+func occurrances(_ char: Character, in: String) -> Int {
     let output = char.lowercased()
     var counter = 0
 
@@ -91,7 +91,7 @@ let testCasesFour: [(Character, String, Int)] = [
     (inputOne: " ", inputTwo: "Now with some spaces", expectedOutput: 3),
     (inputOne: "E", inputTwo: "cApItAlS aRe DiFfErEnT", expectedOutput: 2),
 ]
-print(occurrances(" ", "Now with some spaces"))
+print(occurrances("l", in: "hello" ))
 //for (inputOne, inputTwo, expectedOutput) in testCasesFour {
 //    let output = occurrances(of: inputOne, in: inputTwo)
 //    assert(output == expectedOutput, "Was expecting \(expectedOutput) for inputs \(inputOne) and \(inputTwo) but got \(output)")
